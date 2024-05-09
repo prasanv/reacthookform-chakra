@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 import { useForm } from "react-hook-form";
+import Home from '../components/Home';
 
 export default function RHFexample1() {
   const defaultValues = {
@@ -30,6 +31,7 @@ export default function RHFexample1() {
   
   return (
     <div className={styles.container}>
+      <Home></Home>
       <form className={styles.main}>
         <input 
           id='firstname'

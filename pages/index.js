@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react";
+import Link from 'next/link'
 import UseRefExample1 from "../components/UseRefExample1";
 import styles from "../styles/Home.module.css";
 
