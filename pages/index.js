@@ -8,16 +8,16 @@ export default function Home() {
       <div>
         <ul>
           <li>
-            <Link href="/rhfexample1">Example 1</Link>
+            <Link href="/rhfExample1">Example 1</Link>
           </li>
           <li>
-            <Link href="/rhfexample2">Example 2</Link>
+            <Link href="/rhfExample2">Example 2</Link>
           </li>
           <li>
-            <Link href="/rhfexample3">Example 3</Link>
+            <Link href="/rhfExample3">Example 3</Link>
           </li>
           <li>
-            <Link href="/rhfexample4">Example 4</Link>
+            <Link href="/rhfExample4">Example 4</Link>
           </li>
         </ul>
       </div>

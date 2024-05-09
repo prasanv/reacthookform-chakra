@@ -5,6 +5,7 @@ import { Input } from "@chakra-ui/react"
 import { Button } from "@chakra-ui/react"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import Home from '../components/Home';
 
 const schema = yup.object().shape({
   firstname: yup.string().required().matches(/^[a-zA-Z]{5,20}$/),
@@ -39,6 +40,7 @@ export default function RHFexample4() {
   
   return (
     <div className={styles.container}>
+    <Home></Home>
       <form className={styles.controlledMain}>
         <Controller
           name="firstname"

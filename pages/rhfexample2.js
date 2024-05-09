@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import Home from '../components/Home';
 
 const schema = yup.object().shape({
   firstname: yup.string().required().matches(/^[a-zA-Z]{5,20}$/),
@@ -42,6 +43,7 @@ export default function RHFexample2() {
   
   return (
     <div className={styles.container}>
+    <Home></Home>
       <form className={styles.main}>
         <input 
           id='firstname'

@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { Input, Button } from "@chakra-ui/react"
 import InputField from "../components/InputField"
 import schema from '../components/SchemaObject'
+import Home from '../components/Home';
 
 export default function RHFexample3() {
   const defaultValues = {
@@ -36,6 +37,7 @@ export default function RHFexample3() {
   
   return (
     <div className={styles.container}>
+    <Home></Home>
       <form className={styles.controlledMain}>
         <Controller
           name="firstname"
