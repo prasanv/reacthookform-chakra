@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from '../styles/Home.module.css'
+import React from "react";
+import styles from "../styles/Home.module.css";
 import { useForm } from "react-hook-form";
-import Home from '../components/Home';
+import Home from "../components/Home";
 
 export default function RHFexample1() {
   const defaultValues = {
@@ -11,75 +11,91 @@ export default function RHFexample1() {
     email: "",
     password: "",
     confirmPassword: "",
-  }
-  
-  const { 
-    register, 
-    formState: { errors }, 
-    reset, 
-    handleSubmit 
+  };
+
+  const {
+    register,
+    formState: { errors },
+    reset,
+    handleSubmit,
   } = useForm({
-    mode: 'onTouched',
+    mode: "onTouched",
     defaultValues,
   });
-  
+
   const onSubmitHandler = (data, e) => {
     console.log(data);
     console.log(e);
     reset(defaultValues);
-  }
-  
+  };
+
   return (
     <div className={styles.container}>
       <Home></Home>
       <form className={styles.main}>
-        <input 
-          id='firstname'
-          {...register('firstname', { required: true, pattern: /^[a-zA-Z]{5,20}$/ })} 
-          placeholder="First Name" 
+        <input
+          id="firstname"
+          {...register("firstname", {
+            required: true,
+            pattern: /^[a-zA-Z]{5,20}$/,
+          })}
+          placeholder="First Name"
         ></input>
-        {errors.firstname && <span className={styles.errorMsg}>Invalid first Name</span>}
-        <input 
+        {errors.firstname && (
+          <span className={styles.errorMsg}>Invalid first Name</span>
+        )}
+        <input
           id="lastname"
-          {...register('lastname', { required: true, pattern: /^[a-zA-Z]{5,20}$/ })} 
+          {...register("lastname", {
+            required: true,
+            pattern: /^[a-zA-Z]{5,20}$/,
+          })}
           placeholder="Last Name"
         ></input>
-        {errors.lastname && <span className={styles.errorMsg}>Invalid Last Name</span>}
-        <input 
+        {errors.lastname && (
+          <span className={styles.errorMsg}>Invalid Last Name</span>
+        )}
+        <input
           id="age"
-          {...register('age', {min:18, max: 120})} 
-          type="number" 
+          {...register("age", { min: 18, max: 120 })}
+          type="number"
           placeholder="Age"
         ></input>
-        {errors.age && <span className={styles.errorMsg}>Age must be within 18 - 99</span>}
-        <input 
-          {...register('email', { pattern: /^[a-zA-Z0-9\.-_]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$/})} 
+        {errors.age && (
+          <span className={styles.errorMsg}>Age must be within 18 - 99</span>
+        )}
+        <input
+          {...register("email", {
+            pattern: /^[a-zA-Z0-9\.-_]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$/,
+          })}
           placeholder="Email Address"
         ></input>
-        {errors.email && <span className={styles.errorMsg}>Invalid Email Address</span>}
-        <input 
-          {...register('password')} 
-          type="password" 
+        {errors.email && (
+          <span className={styles.errorMsg}>Invalid Email Address</span>
+        )}
+        <input
+          {...register("password")}
+          type="password"
           placeholder="Password"
         ></input>
-        <input 
-          {...register('confirmPassword')} 
-          type="password" 
+        <input
+          {...register("confirmPassword")}
+          type="password"
           placeholder="Confirm Password"
         ></input>
-        <input 
-          type="button" 
-          name="submit" 
-          value="SUBMIT" 
+        <input
+          type="button"
+          name="submit"
+          value="SUBMIT"
           onClick={handleSubmit(onSubmitHandler)}
         ></input>
-        <input 
-          type="button" 
-          name="reset" 
-          value="RESET" 
+        <input
+          type="button"
+          name="reset"
+          value="RESET"
           onClick={() => reset(defaultValues)}
         ></input>
       </form>
     </div>
-  )
+  );
 }

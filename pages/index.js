@@ -1,11 +1,13 @@
-import Link from 'next/link'
+import { Box } from "@chakra-ui/react";
+import Link from "next/link";
 import UseRefExample1 from "../components/UseRefExample1";
+import UseRefExample2 from "../components/UseRefExample2";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <div>
+    <Box>
+      <nav className={styles.navbar}>
         <ul>
           <li>
             <Link href="/rhfExample1">Example 1</Link>
@@ -20,9 +22,10 @@ export default function Home() {
             <Link href="/rhfExample4">Example 4</Link>
           </li>
         </ul>
-      </div>
+      </nav>
       <p>React Hook Form </p>
       <UseRefExample1></UseRefExample1>
-    </div>
+      <UseRefExample2></UseRefExample2>
+    </Box>
   );
 }
